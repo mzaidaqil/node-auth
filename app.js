@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // database connection
-const dbURI = 'mongodb+srv://zayed:test123@nodeauth.q7t63x2.mongodb.net/node-auth?appName=nodeauth';
+const dbURI = 'process.env.MONGODB_URI';
 mongoose.connect(dbURI)
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
